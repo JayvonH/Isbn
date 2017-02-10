@@ -15,4 +15,12 @@ class TestIsbn < Minitest::Test
 	def test_removes_spaces
 		assert_equal("86753", isbn_space_remover("8 6 7 5 3"))
 	end
+	def test_sumcheck
+		#assert_equal(39,isbn_checksum(8+6+7+5+3+0+9+1))
+		assert_equal(true,isbn_10?('7421394761'))
+	end
+	def test_sumx
+		assert_equal(true,isbn_10?('877195869x'))
+	end
+
 end
